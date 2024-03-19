@@ -29,16 +29,20 @@ export const mahasiswaSlice = createSlice({
     },
     setListMahasiswa: (state, action: PayloadAction<Array<MahasiswaInterface>>) => {
       state.list_mahasiswa = action.payload
+      localStorage.setItem('data', JSON.stringify(state.list_mahasiswa))
     },
     addListMahasiswa: (state, action: PayloadAction<MahasiswaInterface>) => {
       state.list_mahasiswa.push(action.payload)
+      localStorage.setItem('data', JSON.stringify(state.list_mahasiswa))
     },
     editListMahasiswa: (state, action: PayloadAction<MahasiswaInterface>) => {
       const selectedIndex = state.list_mahasiswa.findIndex(item => item.nim === action.payload.nim)
       state.list_mahasiswa[selectedIndex] = action.payload
+      localStorage.setItem('data', JSON.stringify(state.list_mahasiswa))
     },
     deleteListMahasiswa: (state, action: PayloadAction<string>) => {
       state.list_mahasiswa = state.list_mahasiswa.filter((item) => item.nim !== action.payload)
+      localStorage.setItem('data', JSON.stringify(state.list_mahasiswa))
     },
   },
 })

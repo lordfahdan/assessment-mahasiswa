@@ -2,15 +2,15 @@ import { MahasiswaInterface } from "../interface/mahasiswa";
 
 export const mahasiswa: Array<MahasiswaInterface> = [
   {
-    nama: 'Jhonny',
     nim: 'awdwa][1231',
+    nama: 'Jhonny',
   },
   {
-    nama: 'Alex',
     nim: 'wadw12321daaw',
+    nama: 'Alex',
   },
   {
-    nama: 'Danny',
     nim: '123-=1231daaaw',
+    nama: 'Danny',
   },
 ]

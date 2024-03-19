@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Dispatch } from 'react';
 import {
   addListMahasiswa,
@@ -13,7 +14,8 @@ export const actionGetListMahasiswa = () => {
   return async (dispatch: Dispatch<unknown>) => {
     dispatch(setLoading(true));
     setTimeout(() => {
-      dispatch(setListMahasiswa(mahasiswa));
+      const dataMahasiswa = localStorage.getItem('data') !== null? JSON.parse(localStorage.getItem('data') as string) : mahasiswa
+      dispatch(setListMahasiswa(dataMahasiswa));
       dispatch(setLoading(false));
     }, 1500);
   };
