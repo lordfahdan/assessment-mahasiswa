@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+table thead {
+  @apply text-left bg-gray-600 text-white
+}
+
+table thead th {
+  @apply px-4 py-2 text-xl border-l border-r
+}
+
+table thead th:first-of-type {
+  @apply rounded-tl-md border-none
+}
+table thead th:last-of-type {
+  @apply rounded-tr-md border-none
+}
+
+table tbody tr td {
+  @apply px-4 py-2 border
+}
+
+table tbody tr:nth-child(even) {
+  @apply bg-gray-300
+}
